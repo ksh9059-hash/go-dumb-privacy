@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>GO DUMB 개인정보처리방침 / Privacy Policy</title>
+<style>
+:root{color-scheme:light}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",Arial,sans-serif;line-height:1.7;color:#1f2937;margin:0;background:#f7f8fa}.wrap{max-width:900px;margin:0 auto;padding:32px 20px 64px}.paper{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:28px;margin:18px 0}h1{line-height:1.3}h2{margin-top:1.8em;font-size:1.3rem}h3{font-size:1.05rem}.notice{background:#fff7ed;border:1px solid #fed7aa;padding:14px 16px;border-radius:10px}.muted{color:#6b7280;font-size:.93rem}li{margin:.35em 0}a{overflow-wrap:anywhere}</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="paper">
+    <h1>GO DUMB 개인정보처리방침</h1>
+    <p>시행일: 2026년 10월 27일</p>
+    <p class="muted">이 문서는 현재 제공된 GO DUMB Android 소스 코드를 기준으로 작성한 초안입니다. 게시 전 사업자 법적 명칭과 연락처를 확인하고, 실제 출시 빌드의 데이터 흐름과 일치하는지 검토하세요.</p>
+    <div class="notice"><strong>게시 전 확인:</strong> 아래의 “운영자 법적 명칭”을 실제 사업자등록증상 상호 또는 적절한 법적 명칭으로 바꾸세요. 연락 이메일 <strong>naktag@curv.kr</strong>이 개인정보 문의를 실제로 받을 수 있는 주소인지 확인하세요. 광고 및 Google Play Billing을 추가하면 이 방침과 Data safety 답변을 해당 SDK의 실제 데이터 처리에 맞게 업데이트해야 합니다.</div>
+  </header>
+  <main class="paper">
+    <h2>1. 운영자 및 문의처</h2>
+    <p>앱 이름: GO DUMB</p>
+    <p>개발자 표시명: CURVELIVE</p>
+    <p>운영자 법적 명칭: <strong>[커브 Curve]</strong></p>
+    <p>개인정보 문의: <a href="mailto:ksh9059@curv.kr">ksh9059@curv.kr</a></p>
+
+    <h2>2. 앱이 접근하거나 처리하는 정보</h2>
+    <p>GO DUMB은 사용자가 선택한 앱을 차단하고, 일일 사용 한도와 예약된 보호 세션을 운영하기 위해 다음 정보를 기기에서 처리합니다.</p>
+    <ul>
+      <li><strong>설치 앱 정보:</strong> 앱 선택 화면에 앱을 표시하기 위해 Android에서 앱의 패키지 식별자, 표시 이름 및 아이콘을 조회합니다.</li>
+      <li><strong>전면 앱 식별자:</strong> 사용자가 접근성 서비스를 직접 활성화한 경우, 접근성 이벤트에서 현재 전면에 표시된 앱의 패키지 식별자를 확인하여 선택한 앱 차단 및 일일 사용 시간 계산을 수행합니다.</li>
+      <li><strong>사용 설정 및 기록:</strong> 사용자가 선택한 앱, DUMB MODE 세션의 시작/종료 시각과 지속시간, 예약 설정, Daily Limit 그룹과 사용량, 통계 및 보호 상태 이벤트를 처리하고 저장합니다.</li>
+      <li><strong>통계 내보내기:</strong> 사용자가 직접 통계 내보내기를 실행하면 통계/기록 파일을 기기에 생성합니다. 파일을 다른 앱에 공유하거나 외부로 전송하는 경우 사용자가 선택한 대상과 동작에 따릅니다.</li>
+    </ul>
+    <p>검토한 Android 접근성 서비스 코드는 전면 앱 전환 이벤트의 패키지 식별자를 이용합니다. GO DUMB은 이 기능을 위해 메시지 본문, 게시물 내용, 키 입력 또는 비밀번호를 수집하도록 설계되어 있지 않습니다.</p>
+
+    <h2>3. 접근성 서비스 사용 목적</h2>
+    <p>GO DUMB은 Android AccessibilityService를 사용해 현재 전면 앱을 확인하고, 사용자가 선택한 앱이 보호 대상일 때 차단 화면을 표시하거나 Daily Limit 사용 시간을 계산합니다. 이 기능은 앱의 핵심 기능에 필요합니다. 접근성 권한은 사용자가 Android 설정에서 직접 활성화해야 하며, 언제든 설정에서 끌 수 있습니다. 접근성 기능을 활성화하기 전에 앱 내 설명을 확인하세요.</p>
+
+    <h2>4. 기기 내 저장 및 Google 서비스</h2>
+    <p>앱 설정, 선택 앱, 예약, 사용량과 기록은 Android 앱의 로컬 저장소(SharedPreferences 및 네이티브 앱 저장소)에 저장됩니다. 앱은 활성 DUMB MODE 세션을 복원하기 위해 Google Play services의 Block Store 기능에도 세션 복원 정보를 저장할 수 있습니다. 이 정보에는 활성 상태, 종료 시각, 지속시간 및 선택된 앱의 패키지 식별자 등이 포함될 수 있습니다. 이 처리는 Google Play services의 서비스 및 개인정보 보호 조건의 적용을 받을 수 있습니다.</p>
+    <p>제공된 소스 코드에서는 GO DUMB 운영자가 관리하는 자체 서버로 위 사용 기록을 전송하는 기능이나 분석 SDK가 확인되지 않았습니다. 다만 Google Play services의 Block Store는 별도 Google 서비스입니다. 앱의 향후 버전에서 서버, 분석, 광고 또는 결제 SDK를 추가하는 경우 이 방침을 실제 데이터 흐름에 맞게 수정합니다.</p>
+
+    <h2>5. 정보의 이용 및 공유</h2>
+    <p>정보는 선택 앱 차단, 일일 사용 한도 계산, 예약/세션 복원, 통계 및 기록 표시, 사용자가 요청한 내보내기를 위해 사용됩니다. 제공된 소스 코드 기준으로 GO DUMB 운영자가 해당 정보를 광고 목적으로 판매하거나 자체 서버로 전송하는 기능은 확인되지 않았습니다. 세션 복원에 사용되는 정보는 Google Play services의 Block Store를 통해 처리될 수 있습니다. 사용자가 내보낸 파일을 다른 앱에 공유하는 경우에는 사용자가 선택한 앱의 별도 정책이 적용될 수 있습니다.</p>
+
+    <h2>6. 보관 및 삭제</h2>
+    <p>앱의 설정 및 기록은 기기에 저장되며, 사용자가 앱 내에서 데이터를 변경하거나 Android 시스템 설정에서 GO DUMB의 저장 공간을 지우거나 앱을 제거할 때 로컬 데이터가 삭제될 수 있습니다. 사용자가 내보내 저장한 파일은 사용자가 직접 관리하고 삭제해야 합니다. 앱은 활성 세션이 모두 종료되는 경우 세션 복원용 Block Store 항목을 삭제하도록 구현되어 있습니다. Google 서비스에 이미 저장된 데이터의 보관·삭제는 해당 서비스의 동작과 정책에 따를 수 있습니다.</p>
+
+    <h2>7. 보안</h2>
+    <p>앱은 Android의 앱별 저장 공간과 플랫폼 권한 모델을 사용합니다. 기기를 잠금 해제한 다른 사용자 또는 기기가 손상된 경우와 같은 모든 위험을 제거할 수는 없습니다. 기기의 잠금과 운영체제 보안 업데이트를 유지하고, 통계 파일을 공유할 때 내용을 확인하세요.</p>
+
+    <h2>8. 아동의 개인정보</h2>
+    <p>GO DUMB은 아동을 대상으로 설계된 앱이 아닙니다. 보호자 또는 법정대리인이 아동의 개인정보 처리가 있었다고 판단하거나 문의가 있는 경우 아래 문의처로 연락해 주세요.</p>
+
+    <h2>9. 방침 변경</h2>
+    <p>앱 기능, 광고, 결제 또는 데이터 처리 방식이 변경되면 본 방침도 업데이트됩니다. 변경된 방침은 이 페이지에 게시하고 시행일을 갱신합니다.</p>
+
+    <h2>10. 문의</h2>
+    <p>GO DUMB의 개인정보 처리에 관한 질문이나 요청은 <a href="mailto:naktag@curv.kr">naktag@curv.kr</a>로 보내 주세요.</p>
+  </main>
+  <main class="paper" lang="en">
+    <h1>GO DUMB Privacy Policy</h1>
+    <p>Effective date: October 27, 2026</p>
+    <p class="muted">This is a draft based on the Android source code provided for review. Before publication, verify the legal operator name, contact email, and that the policy matches the release build.</p>
+
+    <h2>1. Operator and Contact</h2>
+    <p>App: GO DUMB</p>
+    <p>Developer display name: CURVELIVE</p>
+    <p>Legal operator name: <strong>[Replace with the actual registered business/legal name]</strong></p>
+    <p>Privacy contact: <a href="mailto:naktag@curv.kr">naktag@curv.kr</a></p>
+
+    <h2>2. Information Accessed or Processed</h2>
+    <p>GO DUMB processes information on the device to block apps selected by the user and to manage daily limits and scheduled protection sessions.</p>
+    <ul>
+      <li><strong>Installed-app information:</strong> Android app package identifiers, display names, and icons are queried to show apps in the app-selection interface.</li>
+      <li><strong>Foreground-app identifier:</strong> When the user enables the Accessibility Service, GO DUMB checks the package identifier in foreground app transition events to block selected apps and calculate Daily Limit usage.</li>
+      <li><strong>Settings and activity records:</strong> Selected apps, DUMB MODE session start/end times and durations, schedules, Daily Limit groups and usage counters, statistics, and protection-state events are processed and stored.</li>
+      <li><strong>Statistics export:</strong> When the user requests an export, a statistics/history file is created on the device. Any further sharing or transmission is controlled by the user's chosen action and destination.</li>
+    </ul>
+    <p>The reviewed Accessibility Service code uses the package identifier from foreground-window transition events. GO DUMB is not designed to collect message contents, post contents, keystrokes, or passwords for this function.</p>
+
+    <h2>3. Accessibility Service</h2>
+    <p>GO DUMB uses Android AccessibilityService to identify the foreground app, block apps selected by the user, and calculate Daily Limit usage. This is a core app function. The user must enable the service in Android settings and can turn it off there at any time. Please review the in-app disclosure before enabling it.</p>
+
+    <h2>4. Local Storage and Google Services</h2>
+    <p>App settings, selected apps, schedules, usage counters, and history are stored in the Android app's local storage (SharedPreferences and native app storage). GO DUMB may also store session-restoration information through Google Play services Block Store to restore an active DUMB MODE session. This may include an active flag, end time, duration, and selected app package identifiers. Google Play services' own terms and privacy practices may apply to this processing.</p>
+    <p>The reviewed source did not show a GO DUMB-operated backend or analytics SDK that sends these usage records to the developer's own server. Block Store is a separate Google service. If server, analytics, advertising, or billing SDKs are added in a future version, this policy will be updated to reflect their actual data practices before release.</p>
+
+    <h2>5. Use and Sharing</h2>
+    <p>Information is used for app blocking, daily-limit calculations, schedule/session restoration, statistics/history display, and user-requested exports. Based on the source reviewed, the app does not contain functionality for the operator to sell these records for advertising or transmit them to an operator-managed server. Session-restoration information may be processed through Google Play services Block Store. If the user shares an exported file with another app, that app's own policies may apply.</p>
+
+    <h2>6. Retention and Deletion</h2>
+    <p>Settings and records are stored on the device. Local app data may be removed by changing data through app features, clearing GO DUMB's storage in Android settings, or uninstalling the app. Exported files are managed and deleted by the user. GO DUMB is implemented to delete its Block Store session-restoration entry when all active sessions have ended. Retention and deletion of data already stored by Google services may depend on those services' behavior and policies.</p>
+
+    <h2>7. Security</h2>
+    <p>The app uses Android's app-specific storage and platform permission model. No method eliminates every risk, including risks from an unlocked or compromised device. Keep your device secured and review exported files before sharing them.</p>
+
+    <h2>8. Children</h2>
+    <p>GO DUMB is not designed for children. If a parent or legal guardian has a question about personal data processing involving a child, please contact us.</p>
+
+    <h2>9. Changes</h2>
+    <p>This policy will be updated if app features, advertising, billing, or data practices change. The updated policy and effective date will be posted on this page.</p>
+
+    <h2>10. Contact</h2>
+    <p>For privacy questions or requests, email <a href="mailto:naktag@curv.kr">naktag@curv.kr</a>.</p>
+  </main>
+</div>
+</body>
+</html>
